@@ -39,7 +39,7 @@
       <div class="con-search">
         <div class="logo">
           <img src="../public/images/logo.png" alt="">
-          <h3>Ecobazar</h3>
+          <h3>22 SHOP</h3>
         </div>
         <div class="search-input">
           <i class="fa-solid fa-magnifying-glass icon-search"></i>
@@ -48,10 +48,23 @@
         </div>
         <div class="cart">
           <i class="fa-regular fa-heart"></i>
-          <i class="fa-solid fa-basket-shopping"></i>
-          <div class="price">
-            <p>Shopping Cart:</p>
-            <h5>-$57.00</h5>
+          <div id="cart-container">
+            <i class="fa-solid fa-basket-shopping" id="click-to-view-cart"></i>
+            <span id="cart-amount">0</span>
+          </div>
+          <!-- Overlay / พื้นหลังเบลอ -->
+          <div id="overlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+              <div class="price">
+                <p>Shopping Cart:</p>
+                <div id="cart">
+                  <p>No Product</p>
+                </div>
+                <button class="btn btn-success mt-3" id="printCart">
+                  Print Cart Receipt
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -64,9 +77,6 @@
     <div class="container">
       <div class="con-navbar">
         <ul class="list-menu">
-          <li><a href="#">หน้าแรก</a></li>
-          <li><a href="#">หมวดหมู่</a></li>
-          <li><a href="#">สินค้า</a></li>
         </ul>
         <div class="phone">
           <i class="fa-solid fa-phone-volume"></i>
@@ -82,13 +92,13 @@
       <div class="conn-hero">
         <div class="con-hero">
           <div class="img-1">
-            <img src="https://img.salehere.co.th/p/1200x0/2025/01/06/oaa4absxxn7t.jpg" alt="">
+            <img src="../public/images/hero-1.jpg" alt="">
           </div>
           <div class="img-2"> 
-            <img src="https://img.salehere.co.th/p/1200x0/2025/01/06/oaa4absxxn7t.jpg" alt="">
+            <img src="../public/images/hero-2.jpg" alt="">
           </div>
           <div class="img-3">
-            <img src="https://img.salehere.co.th/p/1200x0/2025/01/06/oaa4absxxn7t.jpg" alt="">
+            <img src="../public/images/hero-3.jpg" alt="">
           </div>
         </div>
       </div>
@@ -100,19 +110,19 @@
       <div class="container">
         <div class="con-category">
           <div>
-            <img src="https://i.pinimg.com/736x/1b/83/44/1b83441671c50fbe55477a83b4868e65.jpg" alt="">
+            <a href="#section-1">
+              <img src="../public/images/category-1.jpg" alt="">
+            </a>
           </div>
           <div>
-            <img src="https://i.pinimg.com/736x/1b/83/44/1b83441671c50fbe55477a83b4868e65.jpg" alt="">
+            <a href="#section-2">
+              <img src="../public/images/drink1.jpg" alt="">
+            </a>
           </div>
           <div>
-            <img src="https://i.pinimg.com/736x/1b/83/44/1b83441671c50fbe55477a83b4868e65.jpg" alt="">
-          </div>
-          <div>
-            <img src="https://i.pinimg.com/736x/1b/83/44/1b83441671c50fbe55477a83b4868e65.jpg" alt="">
-          </div>
-          <div>
-            <img src="https://i.pinimg.com/736x/1b/83/44/1b83441671c50fbe55477a83b4868e65.jpg" alt="">
+            <a href="#section-3">
+              <img src="../public/images/category-3.jpg" alt="">
+            </a>
           </div>
         </div>
       </div>
@@ -121,158 +131,102 @@
     <!-- Products -->
     <div class="product">
       <div class="container">
-        <h1>Products</h1>
+        <h2 style="margin-bottom: 1rem;" id="section-1">สินค้า</h2>
         <div class="cover-product">
           <div class="con-product">
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/M-150.jpg" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">M-150</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">13 บาท</p>
+                  <button class="add-to-cart" data-product-id="M-150" data-price="13">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/Oishi Green Tea Lemon.jpg" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">โออิชิ กรีนที (น้ำผึ้งผสมมะนาว)</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">15 บาท</p>
+                  <button class="add-to-cart" data-product-id="โออิชิ กรีนที (น้ำผึ้งผสมมะนาว)" data-price="15">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/oishi.jpg" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">โออิชิ กรีนที (องุ่นเคียวโฮ)</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">15 บาท</p>
+                  <button class="add-to-cart" data-product-id="โออิชิ กรีนที (องุ่นเคียวโฮ)" data-price="15">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/Compound herb inhaler.jpg" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">ยาดมหงส์ไทย</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">39 บาท</p>
+                  <button class="add-to-cart" data-product-id="ยาดมหงส์ไทย" data-price="39">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/hersheys.png" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">เฮอร์ชีส์ บาร์ ช็อกโกแลต</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">75 บาท</p>
+                  <button class="add-to-cart" data-product-id="เฮอร์ชีส์ บาร์ ช็อกโกแลต" data-price="75">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/nestle-honey.jpg" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">นมยูเอชที ผสมน้ำผึ้งแท้</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">12 บาท</p>
+                  <button class="add-to-cart" data-product-id="นมยูเอชที ผสมน้ำผึ้งแท้" data-price="12">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/product-oishi-gomu-th.png" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">โออิชิ กรีนที โกมุ-โกมุ (ผลไม้รวม)</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">15 บาท</p>
+                  <button class="add-to-cart" data-product-id="โออิชิ กรีนที โกมุ-โกมุ (ผลไม้รวม)" data-price="15">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt="dog">
+              <img src="../public/images/applehoney-01.png" alt="dog">
               <div class="detail">
-                <p class="title">Green Apple</p>
+                <p class="title">โออิชิ กรีนที (แอปเปิ้ลฮันนี่)</p>
                 <div class="pricing">
-                  <p class="price">$14.99 <span>$20.99</span></p>
-                  <a href="#">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </a>
-                </div>
-                <div class="stars">
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-color"></i>
-                  <i class="fa-solid fa-star star-gray"></i>
+                  <p class="price">15 บาท</p>
+                  <button class="add-to-cart" data-product-id="โออิชิ กรีนที (แอปเปิ้ลฮันนี่)" data-price="15">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -281,8 +235,154 @@
       </div>
     </div>
 
+    <!-- modelllllllllll -->
+
+    <!-- Energy Drink -->
+    <div class="product">
+      <div class="container">
+        <h2 id="section-2" style="margin-bottom: 1rem;">เครื่องดื่มชูกำลัง</h2>
+        <div class="cover-product">
+          <div class="con-product">
+            <div class="item">
+              <img src="../public/images/M-150.jpg" alt="dog">
+              <div class="detail">
+                <p class="title">M-150</p>
+                <div class="pricing">
+                  <p class="price">13 บาท</p>
+                  <button class="add-to-cart" data-product-id="M-150" data-price="13">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/EnergyDrink-1.png" alt="dog">
+              <div class="detail">
+                <p class="title">กระทิงแดง</p>
+                <div class="pricing">
+                  <p class="price">12 บาท</p>
+                  <button class="add-to-cart" data-product-id="กระทิงแดง" data-price="12">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/EnergyDrink-2.png" alt="dog">
+              <div class="detail">
+                <p class="title">Ready</p>
+                <div class="pricing">
+                  <p class="price">15 บาท</p>
+                  <button class="add-to-cart" data-product-id="Ready" data-price="15">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/EnergyDrink-3.png" alt="dog">
+              <div class="detail">
+                <p class="title">คาราบาวแดง</p>
+                <div class="pricing">
+                  <p class="price">10 บาท</p>
+                  <button class="add-to-cart" data-product-id="คาราบาวแดง" data-price="10">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/EnergyDrink-4.jpg" alt="dog">
+              <div class="detail">
+                <p class="title">แรงเจอร์</p>
+                <div class="pricing">
+                  <p class="price">10 บาท</p>
+                  <button class="add-to-cart" data-product-id="แรงเจอร์" data-price="10">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/EnergyDrink-5.png" alt="dog">
+              <div class="detail">
+                <p class="title">ลิโพ</p>
+                <div class="pricing">
+                  <p class="price">12 บาท</p>
+                  <button class="add-to-cart" data-product-id="ลิโพ" data-price="12">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/EnergyDrink-6.png" alt="dog">
+              <div class="detail">
+                <p class="title">สปอนเซอร์</p>
+                <div class="pricing">
+                  <p class="price">12 บาท</p>
+                  <button class="add-to-cart" data-product-id="สปอนเซอร์" data-price="12">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bear -->
+    <div class="product">
+      <div class="container">
+        <h2 id="section-3" style="margin-bottom: 1rem;">เบียร์</h2>
+        <div class="cover-product">
+          <div class="con-product">
+            <div class="item">
+              <img src="../public/images/bear-1.png" alt="dog">
+              <div class="detail">
+                <p class="title">สิงห์</p>
+                <div class="pricing">
+                  <p class="price">45 บาท</p>
+                  <button class="add-to-cart" data-product-id="สิงห์" data-price="45">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/bear-2.png" alt="dog">
+              <div class="detail">
+                <p class="title">ช้าง</p>
+                <div class="pricing">
+                  <p class="price">45 บาท</p>
+                  <button class="add-to-cart" data-product-id="ช้าง" data-price="45">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../public/images/bear-3.png" alt="dog">
+              <div class="detail">
+                <p class="title">ลีโอ</p>
+                <div class="pricing">
+                  <p class="price">45 บาท</p>
+                  <button class="add-to-cart" data-product-id="ลีโอ" data-price="45">
+                    <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   <!-- Footer -->
-  <div class="footer">
+  <!-- <div class="footer">
     <div class="container">
       <div class="con-footer">
 
@@ -319,6 +419,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <script src="../script/index.js"></script>
 </body> 
 </html>

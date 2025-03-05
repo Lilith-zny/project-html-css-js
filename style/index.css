@@ -150,9 +150,40 @@
   }
 }
 
+#cart-amount {
+  position: relative;
+  background-color: green;
+  color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  top: -45px;
+  /* left: -20px; */
+  right: -25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cart-container {
+  position: fixed;  /* ทำให้ติดอยู่กับหน้าจอ */
+  top: 42px;       /* ระยะห่างจากขอบบน */
+  right: 40px;     /* ระยะห่างจากขอบขวา */
+  z-index: 1000;   /* ให้ลอยอยู่เหนือทุกอย่าง */
+  padding: 10px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+#cart-container:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 nav {
   height: 60px;
-  background-color: #333333;
+  background-color: green;
   color: #999999;
 
   .con-navbar {
@@ -261,9 +292,10 @@ nav {
 }
 
 .product {
-  height: 600px;
+  height: 800px;
   display: flex;
-
+  margin-top: 30px;
+  
   .cover-product {
     display: flex;
     justify-content: center;
@@ -271,7 +303,7 @@ nav {
   }
 
   .con-product {
-    height: 500px;
+    height: 750px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -280,12 +312,13 @@ nav {
     .item {
       border: 1px solid rgb(233, 233, 233);
       width: 200px;
-      height: 250px;
+      height: 350px;
       display: flex;
       flex-direction: column;
+      position: relative;
 
       img {
-        height: 150px;
+        height: 250px;
         width: 100%;
         object-fit: cover;
       }
@@ -298,6 +331,7 @@ nav {
           color: rgb(44, 44, 44);
           font-weight: lighter;
           padding-top: 5px;
+          font-size: 20px;
         }
 
         .pricing {
@@ -306,41 +340,33 @@ nav {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          position: absolute;
+          bottom: 5px;
+          left: 0;
+          padding: 0 10px;
+          width: 100%;
 
           .price {
-            span {
-              color: gray;
-              margin-left: 7px;
-              text-decoration: line-through;
-              text-decoration-color: gray;
-            }
+            font-size: 20px;
           }
 
-          a {
-            background-color: rgb(194, 194, 194);
+          button {
+            background-color: white;
             height: 35px;
             width: 35px;
             border-radius: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
 
             i {
               font-size: 20px;
-              color: white;
+              color: green;
             }
           }
-        }
-
-        .star-color {
-          font-size: 14px;
-          color: gold;
-        }
-
-        .star-gray {
-          background: linear-gradient(to right, gold 50%, gray 50%);
-          -webkit-background-clip: text;
-          color: transparent;
         }
       }
     }
@@ -422,3 +448,140 @@ nav {
   }
 }
 
+
+/* Overlay Styling */
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with opacity */
+  z-index: 1000; /* Ensures overlay appears on top */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Smooth transition when showing */
+}
+
+/* Overlay Content Styling */
+.overlay-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+  width: 90%;
+  max-width: 550px; /* Set max width for better responsiveness */
+  text-align: center;
+  transition: transform 0.3s ease; /* Smooth transition effect when it appears */
+  transform: scale(0.8);
+  position: relative;
+}
+
+/* On show: scaling up animation */
+.overlay.show .overlay-content {
+  transform: scale(1);
+}
+
+/* Title styling */
+.overlay-content h2 {
+  font-size: 2em; /* Slightly larger font for the title */
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Cart item list styling */
+#cart ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+#cart ul li {
+  margin-bottom: 15px; /* Increase space between items */
+  color: #555;
+  line-height: 1.6;
+}
+
+#cart p {
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Button Styling */
+#overlay button {
+  background-color: #28a745; /* Green color for the button */
+  color: #FFFFFF;
+  font-size: 1.1em;
+  padding: 5px 15px; /* More padding for better button size */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-weight: 600; /* Make the font a little bolder */
+  display: inline-block;
+  min-width: 50px; /* Ensures the button has a minimum width */
+}
+
+/* Button hover effect */
+#overlay button:hover {
+  background-color: #218838; /* Darker green when hovered */
+}
+
+/* Close overlay when clicking outside the content */
+.overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Close content when clicking inside content */
+.overlay-content:hover {
+  cursor: default;
+}
+
+/* Close Button (optional) */
+.overlay-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  color: #aaa;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.overlay-content .close-btn:hover {
+  color: #333;
+}
+
+/* Styling for the delete (X) button */
+.delete-button {
+  background: none;
+  border: none;
+  color: #dc3545; /* Red color for the X button */
+  font-size: 1.5em; /* Larger font size for visibility */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #c82333; /* Darker red when hovered */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr td, tr th {
+  border-bottom: 1px solid rgb(182, 182, 182);
+  padding: 10px 10px;
+}
